@@ -1,0 +1,58 @@
+public class Park {
+    private static class Attraction {
+        private String name;
+        private String type;
+        private int openingHours;
+        private double cost;
+
+        public Attraction(String name, String type, int openingHours, double cost) {
+            this.name = name;
+            this.type = type;
+            this.openingHours = openingHours;
+            this.cost = cost;
+        }
+
+        public String getName() {
+            return name;
+        }
+
+        public String getType() {
+            return type;
+        }
+
+        public int getOpeningHours() {
+            return openingHours;
+        }
+
+        public double getCost() {
+            return cost;
+        }
+    }
+
+    private Attraction[] attractions;
+
+    public Park() {
+        attractions = new Attraction[]{
+ new Attraction("Колесо обозрения", "Карусель", 1000, 200),
+ new Attraction("Американские горки", "Аттракцион", 1200, 300),
+ new Attraction("Автодром", "Аттракцион", 1400, 400),
+ new Attraction("Комната страха", "Аттракцион", 1600, 500),
+ new Attraction("Зоопарк", "Выставка", 1800, 600)
+ };
+ }
+
+ public void printAttractions() {
+ for (Attraction attraction : attractions) {
+ System.out.println("Название: " + attraction.getName());
+ System.out.println("Тип: " + attraction.getType());
+ System.out.println("Время работы: " + attraction.getOpeningHours());
+ System.out.println("Стоимость: " + attraction.getCost());
+ System.out.println();
+ }
+ }
+
+ public static void main(String[] args) {
+ Park park = new Park();
+ park.printAttractions();
+ }
+}
